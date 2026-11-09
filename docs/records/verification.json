@@ -1,0 +1,76 @@
+{
+  "environment": {
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+  },
+  "main_sha256": "6626b492d2bc262cbda64e567bbeb53441bb9f48e8034d3d577f6ea1dade9a61",
+  "data_sha256": "1d5dc0f792b12802f954d92da4c17b0770b4f19efe846fec50ad589858d8c3e4",
+  "checks": [
+    {
+      "name": "manual_a",
+      "passed": true
+    },
+    {
+      "name": "manual_b",
+      "passed": true
+    },
+    {
+      "name": "manual_tie",
+      "passed": true
+    },
+    {
+      "name": "input_validation",
+      "passed": true
+    },
+    {
+      "name": "official_data",
+      "passed": true
+    },
+    {
+      "name": "shape",
+      "passed": true
+    },
+    {
+      "name": "label",
+      "passed": true
+    },
+    {
+      "name": "missing_input",
+      "passed": true
+    },
+    {
+      "name": "non_numeric",
+      "passed": true
+    },
+    {
+      "name": "missing_file",
+      "passed": true
+    },
+    {
+      "name": "invalid_json",
+      "passed": true
+    },
+    {
+      "name": "invalid_schema",
+      "passed": true
+    },
+    {
+      "name": "eof",
+      "passed": true
+    },
+    {
+      "name": "label_aliases",
+      "passed": true
+    },
+    {
+      "name": "epsilon_policy",
+      "passed": true
+    },
+    {
+      "name": "mac_values",
+      "passed": true
+    }
+  ],
+  "passed": 16,
+  "total": 16
+}

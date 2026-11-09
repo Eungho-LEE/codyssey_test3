@@ -1,0 +1,22 @@
+[STDIN]
+2
+0
+
+[STDOUT]
+1. 사용자 입력 / 2. data.json / 0. 종료: size_5_1: FAIL - 행 수가 5이 아닙니다.
+size_5_2: Cross=8.9, X=0.1, 판정=Cross, expected=Cross, PASS
+size_13_1: Cross=0.3, X=14.7, 판정=X, expected=X, PASS
+size_13_2: Cross=7.5, X=7.5, 판정=UNDECIDED, expected=Cross, FAIL
+size_25_1: Cross=4.9, X=4.9, 판정=UNDECIDED, expected=X, FAIL
+size_25_2: Cross=52.9, X=0.1, 판정=Cross, expected=Cross, PASS
+크기 / 한 필터 평균 시간(ms) / MAC 위치쌍 수 / 반복
+3x3 / 0.000631 / 9 / 10
+5x5 / 0.001412 / 25 / 10
+13x13 / 0.003899 / 169 / 10
+25x25 / 0.012841 / 625 / 10
+총 6 / 통과 3 / 실패 3
+size_5_1 행 수가 5이 아닙니다.
+size_13_2 동점(UNDECIDED)
+size_25_1 동점(UNDECIDED)
+1. 사용자 입력 / 2. data.json / 0. 종료: 
+[STDERR]

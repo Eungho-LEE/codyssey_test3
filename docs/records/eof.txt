@@ -1,0 +1,7 @@
+[STDIN]
+
+[STDOUT]
+1. 사용자 입력 / 2. data.json / 0. 종료: 
+입력이 종료되어 마칩니다.
+
+[STDERR]
