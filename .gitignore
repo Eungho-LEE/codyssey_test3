@@ -3,3 +3,7 @@ __pycache__/
 .venv/
 .env
 env/
+# Local study guides are kept in the parent learning folder.
+docs/code/
+scripts/build_code_guide.py
+scripts/code_guide_view.py
