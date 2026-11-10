@@ -4,6 +4,8 @@
 
 **보너스 과제 완료(2026-11-10): [패턴 생성·1차원 MAC 최적화·검증 방법](docs/BONUS.md)** · [실측 성능 표](docs/records/bonus-performance.md) · [최신 58개 보너스 검사](docs/records/bonus-verification.json)
 
+**[보너스를 포함한 main.py 354줄 전체 설명자료](docs/code/main_line_by_line.html)** — 2026-11-10 현재 코드와 줄 번호를 맞췄습니다. 코드 옆 설명·검색·함수 이동·전체 코드 복사를 지원하며, 추가·변경 설명은 `[보너스]`로 표시했습니다. [소스 일치 검증](docs/code/guide-verification.json)
+
 ## 실행 환경과 방법
 
 - 요구 환경: Python 3.8 이상, 외부 패키지 설치 없음
