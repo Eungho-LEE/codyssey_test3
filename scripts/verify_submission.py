@@ -54,7 +54,7 @@ def main():
     run("manual_b", "1\n" + a + b + b + "0\n", ["판정: B"])
     run("manual_tie", "1\n" + a + b + zero + "0\n", ["판정: 판정 불가"])
     run("input_validation", "9\n\n1\n0 1\nabc 0 0\nnan 0 0\n\n" + a + b + a + "0\n",
-        ["0, 1, 2 중 하나", "한 줄에 숫자 3개", "숫자로 변환할 수 없습니다",
+        ["0, 1, 2, 3, 4 중 하나", "한 줄에 숫자 3개", "숫자로 변환할 수 없습니다",
          "유한한 숫자만", "판정: A"])
     output = run("official_data", "2\n0\n", ["총 6 / 통과 3 / 실패 3",
         "size_5_1 동점(UNDECIDED)", "size_13_2 동점(UNDECIDED)",
@@ -86,6 +86,10 @@ def main():
               "checks": results, "passed": sum(x["passed"] for x in results),
               "total": len(results)}
     (OUT / "verification.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    for result in results:
+        log = OUT / (result['name'] + '.txt')
+        if log.exists():
+            log.write_text('\n'.join(line.rstrip() for line in log.read_text(encoding='utf-8').splitlines()) + '\n', encoding='utf-8')
     print(json.dumps(report, ensure_ascii=False, indent=2))
     print(output)
 

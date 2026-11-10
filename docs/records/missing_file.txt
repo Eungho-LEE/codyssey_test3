@@ -3,6 +3,6 @@
 0
 
 [STDOUT]
-1. 사용자 입력 / 2. data.json / 0. 종료: data.json을 읽을 수 없습니다: [Errno 2] No such file or directory: '/tmp/mini-npu-sy9urnq_/data.json'
-1. 사용자 입력 / 2. data.json / 0. 종료: 
+1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: data.json을 읽을 수 없습니다: [Errno 2] No such file or directory: '/tmp/mini-npu-h84b6yzn/data.json'
+1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료:
 [STDERR]

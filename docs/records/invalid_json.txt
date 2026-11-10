@@ -3,6 +3,6 @@
 0
 
 [STDOUT]
-1. 사용자 입력 / 2. data.json / 0. 종료: data.json을 읽을 수 없습니다: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
-1. 사용자 입력 / 2. data.json / 0. 종료: 
+1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: data.json을 읽을 수 없습니다: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료:
 [STDERR]

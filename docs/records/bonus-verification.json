@@ -1,0 +1,338 @@
+{
+  "date": "2026-11-10",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "main_sha256": "b91df77ebdd57f196d85117c7b19c6944486092a32791008d472cc57372a26d1",
+  "passed": 58,
+  "checks": [
+    {
+      "name": "shape and binary values 1",
+      "passed": true
+    },
+    {
+      "name": "Cross axes 1",
+      "passed": true
+    },
+    {
+      "name": "X diagonals 1",
+      "passed": true
+    },
+    {
+      "name": "flat length and scores 1",
+      "passed": true
+    },
+    {
+      "name": "shape and binary values 2",
+      "passed": true
+    },
+    {
+      "name": "Cross axes 2",
+      "passed": true
+    },
+    {
+      "name": "X diagonals 2",
+      "passed": true
+    },
+    {
+      "name": "flat length and scores 2",
+      "passed": true
+    },
+    {
+      "name": "shape and binary values 3",
+      "passed": true
+    },
+    {
+      "name": "Cross axes 3",
+      "passed": true
+    },
+    {
+      "name": "X diagonals 3",
+      "passed": true
+    },
+    {
+      "name": "flat length and scores 3",
+      "passed": true
+    },
+    {
+      "name": "shape and binary values 4",
+      "passed": true
+    },
+    {
+      "name": "Cross axes 4",
+      "passed": true
+    },
+    {
+      "name": "X diagonals 4",
+      "passed": true
+    },
+    {
+      "name": "flat length and scores 4",
+      "passed": true
+    },
+    {
+      "name": "shape and binary values 5",
+      "passed": true
+    },
+    {
+      "name": "Cross axes 5",
+      "passed": true
+    },
+    {
+      "name": "X diagonals 5",
+      "passed": true
+    },
+    {
+      "name": "flat length and scores 5",
+      "passed": true
+    },
+    {
+      "name": "shape and binary values 13",
+      "passed": true
+    },
+    {
+      "name": "Cross axes 13",
+      "passed": true
+    },
+    {
+      "name": "X diagonals 13",
+      "passed": true
+    },
+    {
+      "name": "flat length and scores 13",
+      "passed": true
+    },
+    {
+      "name": "shape and binary values 25",
+      "passed": true
+    },
+    {
+      "name": "Cross axes 25",
+      "passed": true
+    },
+    {
+      "name": "X diagonals 25",
+      "passed": true
+    },
+    {
+      "name": "flat length and scores 25",
+      "passed": true
+    },
+    {
+      "name": "shape and binary values 101",
+      "passed": true
+    },
+    {
+      "name": "Cross axes 101",
+      "passed": true
+    },
+    {
+      "name": "X diagonals 101",
+      "passed": true
+    },
+    {
+      "name": "flat length and scores 101",
+      "passed": true
+    },
+    {
+      "name": "3x3 matches original examples",
+      "passed": true
+    },
+    {
+      "name": "reject generator size 0",
+      "passed": true
+    },
+    {
+      "name": "reject generator size -1",
+      "passed": true
+    },
+    {
+      "name": "reject generator size 102",
+      "passed": true
+    },
+    {
+      "name": "reject generator size 1.5",
+      "passed": true
+    },
+    {
+      "name": "reject generator size True",
+      "passed": true
+    },
+    {
+      "name": "reject generator size '3'",
+      "passed": true
+    },
+    {
+      "name": "nonbinary numeric equivalence 3",
+      "passed": true
+    },
+    {
+      "name": "benchmark valid 3",
+      "passed": true
+    },
+    {
+      "name": "nonbinary numeric equivalence 5",
+      "passed": true
+    },
+    {
+      "name": "benchmark valid 5",
+      "passed": true
+    },
+    {
+      "name": "nonbinary numeric equivalence 13",
+      "passed": true
+    },
+    {
+      "name": "benchmark valid 13",
+      "passed": true
+    },
+    {
+      "name": "nonbinary numeric equivalence 25",
+      "passed": true
+    },
+    {
+      "name": "benchmark valid 25",
+      "passed": true
+    },
+    {
+      "name": "flat length mismatch",
+      "passed": true
+    },
+    {
+      "name": "invalid repetition count",
+      "passed": true
+    },
+    {
+      "name": "invalid shape",
+      "passed": true
+    },
+    {
+      "name": "nonfinite value",
+      "passed": true
+    },
+    {
+      "name": "generate_cross",
+      "passed": true
+    },
+    {
+      "name": "generate_x",
+      "passed": true
+    },
+    {
+      "name": "even_size",
+      "passed": true
+    },
+    {
+      "name": "degenerate_tie",
+      "passed": true
+    },
+    {
+      "name": "compare_layouts",
+      "passed": true
+    },
+    {
+      "name": "original_json",
+      "passed": true
+    },
+    {
+      "name": "generator_eof",
+      "passed": true
+    }
+  ],
+  "benchmarks": [
+    {
+      "size": 3,
+      "repeats": 1000,
+      "rounds": 5,
+      "score": 1.0,
+      "flat_score": 1.0,
+      "two_dimensional_ms": 0.00038290700000231936,
+      "flat_ms": 0.00026247799999623567,
+      "conversion_ms": 0.0011920000062559666,
+      "speedup": 1.4588155960035158
+    },
+    {
+      "size": 5,
+      "repeats": 1000,
+      "rounds": 5,
+      "score": 1.0,
+      "flat_score": 1.0,
+      "two_dimensional_ms": 0.0009288649999987797,
+      "flat_ms": 0.0006135550000010426,
+      "conversion_ms": 0.0010420000009503383,
+      "speedup": 1.5139066587301893
+    },
+    {
+      "size": 13,
+      "repeats": 1000,
+      "rounds": 5,
+      "score": 1.0,
+      "flat_score": 1.0,
+      "two_dimensional_ms": 0.004980822000000273,
+      "flat_ms": 0.0036864930000035656,
+      "conversion_ms": 0.003175999999882606,
+      "speedup": 1.3511003547261464
+    },
+    {
+      "size": 25,
+      "repeats": 1000,
+      "rounds": 5,
+      "score": 1.0,
+      "flat_score": 1.0,
+      "two_dimensional_ms": 0.017491628999998454,
+      "flat_ms": 0.014196808999997756,
+      "conversion_ms": 0.007233999994582518,
+      "speedup": 1.232081730479097
+    }
+  ],
+  "sessions": [
+    {
+      "name": "generate_cross",
+      "stdin": "3\n0\nabc\n102\n3\n9\n1\n0\n",
+      "stdout": "1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: 생성할 크기 N(1~101): 크기는 1~101 정수여야 합니다.\n생성할 크기 N(1~101): invalid literal for int() with base 10: 'abc'\n생성할 크기 N(1~101): 크기는 1~101 정수여야 합니다.\n생성할 크기 N(1~101): Cross\n0 1 0\n1 1 1\n0 1 0\nX\n1 0 1\n0 1 0\n1 0 1\n재활용할 패턴(1 Cross / 2 X): 1 또는 2를 입력하세요.\n재활용할 패턴(1 Cross / 2 X): 생성된 패턴을 모드 1의 판정·성능 분석에 전달합니다. A=Cross, B=X\n필터를 메모리에 저장했습니다.\nA 점수: 5.0, B 점수: 1.0\n판정: A\n3x3 평균 시간: 0.000494 ms / 9 MAC 위치쌍 / 10회\n동일 입력 3x3 / 각 1000회 × 5라운드 중앙값\n2D: 0.000382 ms / 1D: 0.000285 ms\n1D 변환(1회, 측정 구간 밖): 0.001102 ms\n속도비(2D/1D): 1.341\n결과 일치: 5.0 == 5.0\n1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: ",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "generate_x",
+      "stdin": "3\n5\n2\n0\n",
+      "stdout": "1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: 생성할 크기 N(1~101): Cross\n0 0 1 0 0\n0 0 1 0 0\n1 1 1 1 1\n0 0 1 0 0\n0 0 1 0 0\nX\n1 0 0 0 1\n0 1 0 1 0\n0 0 1 0 0\n0 1 0 1 0\n1 0 0 0 1\n재활용할 패턴(1 Cross / 2 X): 생성된 패턴을 모드 1의 판정·성능 분석에 전달합니다. A=Cross, B=X\n필터를 메모리에 저장했습니다.\nA 점수: 1.0, B 점수: 9.0\n판정: B\n5x5 평균 시간: 0.001054 ms / 25 MAC 위치쌍 / 10회\n동일 입력 5x5 / 각 1000회 × 5라운드 중앙값\n2D: 0.000902 ms / 1D: 0.000624 ms\n1D 변환(1회, 측정 구간 밖): 0.001373 ms\n속도비(2D/1D): 1.446\n결과 일치: 1.0 == 1.0\n1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: ",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "even_size",
+      "stdin": "3\n4\n1\n0\n",
+      "stdout": "1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: 생성할 크기 N(1~101): Cross\n0 0 1 0\n0 0 1 0\n1 1 1 1\n0 0 1 0\nX\n1 0 0 1\n0 1 1 0\n0 1 1 0\n1 0 0 1\n재활용할 패턴(1 Cross / 2 X): 생성된 패턴을 모드 1의 판정·성능 분석에 전달합니다. A=Cross, B=X\n필터를 메모리에 저장했습니다.\nA 점수: 7.0, B 점수: 3.0\n판정: A\n4x4 평균 시간: 0.000733 ms / 16 MAC 위치쌍 / 10회\n동일 입력 4x4 / 각 1000회 × 5라운드 중앙값\n2D: 0.000620 ms / 1D: 0.000415 ms\n1D 변환(1회, 측정 구간 밖): 0.001282 ms\n속도비(2D/1D): 1.494\n결과 일치: 7.0 == 7.0\n1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: ",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "degenerate_tie",
+      "stdin": "3\n1\n1\n0\n",
+      "stdout": "1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: 생성할 크기 N(1~101): Cross\n1\nX\n1\n재활용할 패턴(1 Cross / 2 X): 생성된 패턴을 모드 1의 판정·성능 분석에 전달합니다. A=Cross, B=X\n필터를 메모리에 저장했습니다.\nA 점수: 1.0, B 점수: 1.0\n판정: 판정 불가\n1x1 평균 시간: 0.000251 ms / 1 MAC 위치쌍 / 10회\n동일 입력 1x1 / 각 1000회 × 5라운드 중앙값\n2D: 0.000107 ms / 1D: 0.000083 ms\n1D 변환(1회, 측정 구간 밖): 0.000651 ms\n속도비(2D/1D): 1.288\n결과 일치: 1.0 == 1.0\n1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: ",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "compare_layouts",
+      "stdin": "4\n0\n",
+      "stdout": "1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: 2D와 1D의 동일 입력 비교(변환 시간 별도, 호출당 평균 ms의 중앙값)\n동일 입력 3x3 / 각 1000회 × 5라운드 중앙값\n2D: 0.000465 ms / 1D: 0.000273 ms\n1D 변환(1회, 측정 구간 밖): 0.001393 ms\n속도비(2D/1D): 1.705\n결과 일치: 1.0 == 1.0\n동일 입력 5x5 / 각 1000회 × 5라운드 중앙값\n2D: 0.000897 ms / 1D: 0.000597 ms\n1D 변환(1회, 측정 구간 밖): 0.001442 ms\n속도비(2D/1D): 1.502\n결과 일치: 1.0 == 1.0\n동일 입력 13x13 / 각 1000회 × 5라운드 중앙값\n2D: 0.004905 ms / 1D: 0.003588 ms\n1D 변환(1회, 측정 구간 밖): 0.007264 ms\n속도비(2D/1D): 1.367\n결과 일치: 1.0 == 1.0\n동일 입력 25x25 / 각 1000회 × 5라운드 중앙값\n2D: 0.016905 ms / 1D: 0.013904 ms\n1D 변환(1회, 측정 구간 밖): 0.016301 ms\n속도비(2D/1D): 1.216\n결과 일치: 1.0 == 1.0\n1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: ",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "original_json",
+      "stdin": "2\n0\n",
+      "stdout": "1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: size_5_1: Cross=0.9, X=0.9, 판정=UNDECIDED, expected=X, FAIL\nsize_5_2: Cross=8.9, X=0.1, 판정=Cross, expected=Cross, PASS\nsize_13_1: Cross=0.3, X=14.7, 판정=X, expected=X, PASS\nsize_13_2: Cross=7.5, X=7.5, 판정=UNDECIDED, expected=Cross, FAIL\nsize_25_1: Cross=4.9, X=4.9, 판정=UNDECIDED, expected=X, FAIL\nsize_25_2: Cross=52.9, X=0.1, 판정=Cross, expected=Cross, PASS\n크기 / 한 필터 평균 시간(ms) / MAC 위치쌍 수 / 반복\n3x3 / 0.000627 / 9 / 10\n5x5 / 0.000890 / 25 / 10\n13x13 / 0.003774 / 169 / 10\n25x25 / 0.012659 / 625 / 10\n총 6 / 통과 3 / 실패 3\nsize_5_1 동점(UNDECIDED)\nsize_13_2 동점(UNDECIDED)\nsize_25_1 동점(UNDECIDED)\n1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: ",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "generator_eof",
+      "stdin": "3\n",
+      "stdout": "1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: 생성할 크기 N(1~101): \n입력이 종료되어 마칩니다.\n",
+      "stderr": "",
+      "returncode": 0
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import re
 
 
 from time import perf_counter
+from statistics import median
 
 
 EPSILON = 1e-9
@@ -28,6 +29,72 @@ def mac(pattern, filter_grid):
         for column in range(len(pattern[row])):
             total += pattern[row][column] * filter_grid[row][column]
     return total
+
+
+def generate_patterns(n):
+    if type(n) is not int or not 1 <= n <= 101:
+        raise ValueError("크기는 1~101 정수여야 합니다.")
+    middle = n // 2
+    cross = [[int(row == middle or column == middle)
+              for column in range(n)] for row in range(n)]
+    x_grid = [[int(row == column or row + column == n - 1)
+               for column in range(n)] for row in range(n)]
+    return cross, x_grid
+
+
+def flatten(grid):
+    return [value for row in grid for value in row]
+
+
+def mac_flat(pattern, filter_grid):
+    if len(pattern) != len(filter_grid):
+        raise ValueError("1차원 패턴과 필터의 길이가 다릅니다.")
+    total = 0.0
+    for index in range(len(pattern)):
+        total += pattern[index] * filter_grid[index]
+    return total
+
+
+def compare_layouts(pattern, filter_grid, repeats=1000, rounds=5):
+    n = len(pattern)
+    validate_grid(pattern, n)
+    validate_grid(filter_grid, n)
+    if type(repeats) is not int or repeats < 10 or type(rounds) is not int or rounds < 1:
+        raise ValueError("반복은 10 이상, 라운드는 1 이상 정수여야 합니다.")
+    start = perf_counter()
+    flat_pattern, flat_filter = flatten(pattern), flatten(filter_grid)
+    conversion_ms = (perf_counter() - start) * 1000
+    baseline = mac(pattern, filter_grid)
+    optimized = mac_flat(flat_pattern, flat_filter)
+    if not math.isfinite(baseline) or not math.isfinite(optimized) or baseline != optimized:
+        raise ValueError("두 구현의 결과가 같고 유한해야 합니다.")
+    jobs = [(mac, (pattern, filter_grid)), (mac_flat, (flat_pattern, flat_filter))]
+    for function, args in jobs:
+        for _ in range(10):
+            function(*args)
+    timings = {mac: [], mac_flat: []}
+    for trial in range(rounds):
+        for function, args in (jobs if trial % 2 == 0 else jobs[::-1]):
+            start = perf_counter()
+            for _ in range(repeats):
+                function(*args)
+            timings[function].append((perf_counter() - start) * 1000 / repeats)
+    before, after = median(timings[mac]), median(timings[mac_flat])
+    return {"size": n, "repeats": repeats, "rounds": rounds,
+            "score": baseline, "flat_score": optimized,
+            "two_dimensional_ms": before, "flat_ms": after,
+            "conversion_ms": conversion_ms, "speedup": before / after if after else None}
+
+
+def print_layout_comparison(pattern, filter_grid, repeats=1000):
+    result = compare_layouts(pattern, filter_grid, repeats)
+    print(f"동일 입력 {result['size']}x{result['size']} / 각 {repeats}회 × {result['rounds']}라운드 중앙값")
+    print(f"2D: {result['two_dimensional_ms']:.6f} ms / 1D: {result['flat_ms']:.6f} ms")
+    print(f"1D 변환(1회, 측정 구간 밖): {result['conversion_ms']:.6f} ms")
+    speedup = result['speedup']
+    print("속도비(2D/1D):", f"{speedup:.3f}" if speedup is not None else "측정 불가")
+    print(f"결과 일치: {result['score']} == {result['flat_score']}")
+    return result
 
 
 def read_grid(name, n=3):
@@ -205,11 +272,11 @@ def print_report(results):
             print(result["case_id"], result["reason"])
 
 
-def run_manual():
-    a = read_grid("필터 A")
-    b = read_grid("필터 B")
+def run_manual(pattern=None, filters=None):
+    a, b = filters if filters is not None else (read_grid("필터 A"), read_grid("필터 B"))
     print("필터를 메모리에 저장했습니다.")
-    pattern = read_grid("패턴")
+    if pattern is None:
+        pattern = read_grid("패턴")
     score_a = mac(pattern, a)
     score_b = mac(pattern, b)
     if not all(math.isfinite(value) for value in (score_a, score_b)):
@@ -218,7 +285,38 @@ def run_manual():
     print(f"A 점수: {score_a}, B 점수: {score_b}")
     result = decide(score_a, score_b, "A", "B")
     print("판정:", "판정 불가" if result == "UNDECIDED" else result)
-    print(f"3x3 평균 시간: {average_mac_ms(pattern, a, 10):.6f} ms / 9 MAC 위치쌍 / 10회")
+    n = len(pattern)
+    print(f"{n}x{n} 평균 시간: {average_mac_ms(pattern, a, 10):.6f} ms / {n*n} MAC 위치쌍 / 10회")
+
+
+def run_generator():
+    while True:
+        try:
+            n = int(input("생성할 크기 N(1~101): ").strip())
+            cross, x_grid = generate_patterns(n)
+            break
+        except ValueError as error:
+            print(error)
+    for label, grid in (("Cross", cross), ("X", x_grid)):
+        print(label)
+        for row in grid:
+            print(" ".join(str(value) for value in row))
+    while True:
+        choice = input("재활용할 패턴(1 Cross / 2 X): ").strip()
+        if choice in ("1", "2"):
+            break
+        print("1 또는 2를 입력하세요.")
+    pattern = cross if choice == "1" else x_grid
+    print("생성된 패턴을 모드 1의 판정·성능 분석에 전달합니다. A=Cross, B=X")
+    run_manual(pattern=pattern, filters=(cross, x_grid))
+    print_layout_comparison(pattern, cross)
+
+
+def run_optimization():
+    print("2D와 1D의 동일 입력 비교(변환 시간 별도, 호출당 평균 ms의 중앙값)")
+    for n in (3, 5, 13, 25):
+        cross, x_grid = generate_patterns(n)
+        print_layout_comparison(cross, x_grid)
 
 
 def run_json():
@@ -235,15 +333,19 @@ def run_json():
 def main():
     try:
         while True:
-            choice = input("1. 사용자 입력 / 2. data.json / 0. 종료: ").strip()
+            choice = input("1. 사용자 입력 / 2. data.json / 3. 패턴 생성 / 4. 2D·1D 성능 비교 / 0. 종료: ").strip()
             if choice == "0":
                 return
             elif choice == "1":
                 run_manual()
             elif choice == "2":
                 run_json()
+            elif choice == "3":
+                run_generator()
+            elif choice == "4":
+                run_optimization()
             else:
-                print("0, 1, 2 중 하나를 입력하세요.")
+                print("0, 1, 2, 3, 4 중 하나를 입력하세요.")
     except (KeyboardInterrupt, EOFError):
         print("\n입력이 종료되어 마칩니다.")
 
